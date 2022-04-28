@@ -1,0 +1,55 @@
+.jobs{
+  display: flex;
+  /* justify-content: center; */
+  border: 2px solid rgb(179, 174, 174);
+  background-color: #f8f8f8;
+  margin: 15px 90px;
+  padding: 20px 0px;
+  border-radius: 5px;
+}
+
+.jobs img {
+  height: 120px;
+  width: 170px;
+  margin: 0 50px 0 10px;
+  border-radius: 50px;
+  
+}
+
+.job-box{
+  flex: 0.9;
+}
+.job-box p{
+  font-size: 1.1rem;
+}
+.job__button{
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+@media screen and (max-width:970px) {
+  .jobs{
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 5px 0px;
+  }
+
+  .jobs img{
+    width: 150px;
+    margin: 0;
+  }
+
+  .job-box{
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .job-box p{
+    font-size: 0.7rem;
+    padding: 5px;
+  }
+
+}

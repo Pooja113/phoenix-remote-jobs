@@ -1,0 +1,88 @@
+#login{
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 60%;
+  margin: 30px auto 15px;
+  padding: 10px 30px;
+}
+
+#login h1{
+  text-align: center;
+}
+
+/* .form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0px;
+} */
+
+#login-box label{
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+#login-box input{
+  padding: 10px;
+  outline-width: 0px;
+  border: 2px solid rgb(179, 174, 174);
+  border-radius: 5px;
+}
+
+.new__account{
+  text-align: center;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.create__new__account , .signin__google {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.create__new__account:hover , .signin__google:hover{
+  color: #302e2e;
+}
+
+.login__btn{
+  padding: 8px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background: black;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Source Sans Pro', sans-serif;
+  border: 2px solid #fff;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+
+
+
+@media screen and (max-width:970px) {
+  .head-primary{
+    padding: 5px;
+  }
+  .btn{
+    margin: 0;
+  }
+  #login{
+    margin: 20px auto 5px;
+    padding: 5px;
+    width: 90%;
+  }
+  #login-box label{
+    font-size: 0.7rem;
+  }
+  #login-box input{
+    padding: 5px;
+  }
+  .create__new__account a{
+    font-size: 0.7rem;
+  }
+}

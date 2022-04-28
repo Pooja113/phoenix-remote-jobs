@@ -1,0 +1,48 @@
+#contact{
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 20px;
+}
+
+#contact h1{
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0px;
+}
+
+#contact-box{
+  width: 60%;
+  margin: auto;
+}
+
+#contact-box label{
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+#contact-box input{
+  padding: 10px;
+  outline-width: 0px;
+  border: 2px solid rgb(179, 174, 174);
+  border-radius: 5px;
+}
+
+#contact-box textarea{
+  padding: 10px;
+  outline-width: 0px;
+  border: 2px solid rgb(179, 174, 174);
+  border-radius: 5px;
+}
+
+@media screen and (max-width:970px) {
+  #contact-box label{
+    font-size: 0.7rem;
+  }
+  #contact-box input{
+    padding: 5px;
+  }
+}
