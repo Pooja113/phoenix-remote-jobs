@@ -9,6 +9,7 @@ import {IconButton, Avatar} from '@mui/material';
 
 const Header = () => {
   const [{user},] = useStateValue();
+  
   const [hover,setHover] = useState();
   const [hoverClass,setHoverClass] = useState('');
   const handleAuthentication = () =>{

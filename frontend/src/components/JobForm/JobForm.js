@@ -7,19 +7,14 @@ import * as api from '../../api'
 import { CREATE_JOBS } from "../../actionTypes";
 
 
-const JobForm = ({ onJobPost }) => {
-  const [{user},dispatch] = useStateValue();
-
+const JobForm = () => {
+  const [state, dispatch] = useStateValue();
   const [jobPost , setJobPost] = useState({
     title: '',
     desc: '',
     // creator:'',
     // selectedFile:''
   })
-
-  // const [title, setTitle] = useState("");
-  // const [desc, setDesc] = useState("");
- // const [wordCount, setWordCount] = useState("");
   const navigate = useNavigate();
   
 
@@ -33,7 +28,7 @@ const JobForm = ({ onJobPost }) => {
   const submitHandler = (e) => {
     e.preventDefault();
     api.createPosts(jobPost).then((res)=>{
-    dispatch({
+      dispatch({
       type:CREATE_JOBS,
       payload: {posts : res}
     });
@@ -42,6 +37,7 @@ const JobForm = ({ onJobPost }) => {
     .catch((err)=>console.log(err))
    
   }
+  console.log(state)
 
   return (
     <section id='jobpost'>
@@ -50,7 +46,8 @@ const JobForm = ({ onJobPost }) => {
       </div>
      
       <div id='jobpost__form'>
-        {user ?
+    
+        {state.user ?
           (<React.Fragment><h1 className="head-primary">Tell us about Position</h1>
           <div className='jobpost__form__info'>
             <form  onSubmit={submitHandler} >

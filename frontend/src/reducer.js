@@ -1,7 +1,7 @@
 import { SET_USER, FETCH_ALL_JOBS,  CREATE_JOBS } from "./actionTypes";
 
 export const initialState = {
-  user:null,
+  user: null,
   posts: []
 }
 
@@ -20,7 +20,6 @@ const reducer = (state,action) =>{
         ...state,
        posts: action.payload
       }  
-
       default:
         return state; 
   }
