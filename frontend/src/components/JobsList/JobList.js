@@ -1,18 +1,22 @@
 import React from 'react'
 import './JobList.css'
 import JobItem from './JobItem'
+import { useStateValue } from '../../StateProvider';
 
-const JobList = ({postedJobs, onDelete}) => {
+
+
+const JobList = ({onDelete}) => {
+  const [{posts},] = useStateValue();
   return (
     <section id="jobs-container">
     <h1 className="head-primary">Programming Jobs</h1>
-    <div className="jobs">
-      { postedJobs.length === 0 ? "No Jobs" :
-          postedJobs.map((job)=>{
-              return <JobItem job={job} key={job.id} onDelete = {onDelete} />
+      { !posts.data ? "No Jobs" :
+          posts.data.map((job)=>{
+              return (<div key={job._id} className="jobs">
+                  <JobItem job={job}  onDelete = {onDelete} />
+                </div>)
             })
         }
-    </div>
   </section>
   )
 }

@@ -1,9 +1,9 @@
-const express = require("express");
-const getJobPost = require("../controllers/jobPostController");
+import express from "express";
+import {createPost , getPosts } from "../controllers/jobPostController.js"
 
 const router = express.Router();
 
-router.route("/jobform").get(getJobPost);
+router.route("/joblist").post(createPost);
+router.route("/joblist").get(getPosts);
 
-
-module.exports = router
+export default router

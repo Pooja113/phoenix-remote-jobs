@@ -12,13 +12,26 @@ import Home from "./components/Home/Home";
 import Login from "./components/Auth/Login";
 import { useStateValue } from "./StateProvider";
 import { auth } from './firebase';
-
+import * as api from './api'
+//import { getPosts } from "./posts";
+import { FETCH_ALL_JOBS } from "./actionTypes";
 
 
 function App() {
+  const [{},dispatch] = useStateValue();
+  useEffect( ()=>{
+    api.fetchPosts().then((res)=>{
+      console.log(res)
+      dispatch({
+      type:FETCH_ALL_JOBS,
+      payload: {posts : res}
+    });
+    })
+    .catch((err)=>console.log(err))
+
+  },[dispatch])
 
   const ondeleteHandler = (job) => {
-    console.log("Delete", postedJobs);
     setPostedJobs(postedJobs.filter((e)=>{
       return e!==job;
     }));
@@ -52,8 +65,9 @@ function App() {
     localStorage.setItem("postedJobs",JSON.stringify(postedJobs))
   },[postedJobs])
   
-  const [{},dispatch] = useStateValue();
+
   useEffect(()=>{
+    
     auth.onAuthStateChanged(authUser => {
       if(authUser){
         dispatch({
@@ -69,14 +83,17 @@ function App() {
     })
   },[])
 
+
   return (
     <Router>
       <Routes>
+      
         <Route path="/"  element={
           <React.Fragment> 
             <Header />
             <Home />
-            <JobList postedJobs={postedJobs}  onDelete = {ondeleteHandler} />
+            {/*<JobList postedJobs={postedJobs}  onDelete = {ondeleteHandler} />*/}
+            <JobList onDelete = {ondeleteHandler} />
             <OurWork />
             <Contact />
             <Footer />
@@ -86,7 +103,7 @@ function App() {
           <React.Fragment> 
             <Header />
             <Home />
-            <JobList postedJobs={postedJobs}  onDelete = {ondeleteHandler} />
+            <JobList onDelete = {ondeleteHandler} />
             <Footer />
           </React.Fragment>} 
         />
