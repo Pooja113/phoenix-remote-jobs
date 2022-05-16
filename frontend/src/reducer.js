@@ -13,7 +13,10 @@ const reducer = (state,action) =>{
         user: action.user
       }
     case FETCH_ALL_JOBS:
-      return action.payload;
+      return {
+        ...state,
+       posts: action.payload
+      }
        
     case CREATE_JOBS:
       return {

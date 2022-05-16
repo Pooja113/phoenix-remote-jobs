@@ -4,7 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import JobList from "./components/JobsList/JobList";
+import JobsList from "./components/JobsList/JobsList";
 import OurWork from "./components/OurWork/OurWork";
 import Contact from "./components/Contact/Contact";
 import JobForm from "./components/JobForm/JobForm";
@@ -95,7 +95,7 @@ function App() {
             <Header />
             <Home />
             {/*<JobList postedJobs={postedJobs}  onDelete = {ondeleteHandler} />*/}
-            <JobList />
+            <JobsList />
             <OurWork />
             <Contact />
             <Footer />
@@ -105,7 +105,7 @@ function App() {
           <React.Fragment> 
             <Header />
             <Home />
-            <JobList />
+            <JobsList />
             <Footer />
           </React.Fragment>} 
         />
